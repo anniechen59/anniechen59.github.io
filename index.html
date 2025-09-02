@@ -13,6 +13,7 @@
             content="width=device-width, initial-scale=1, user-scalable=no"
         />
         <link rel="stylesheet" href="assets/css/main.css" />
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     </head>
     <body class="is-preload">
         <!-- Wrapper -->
@@ -100,49 +101,74 @@
 
                         <ul>
                             <li>
-                                <a href="#" data-page="content/homePage.html"
+                                <a href="#" data-page="site/homePage.html"
                                     >Homepage</a
                                 >
                             </li>
                             <li>
-                                <a href="#" data-page="content/work&proj.html"
+                                <a href="#" data-page="site/work&proj.html"
                                     >work/project</a
                                 >
                             </li>
                             <li>
-                                <a href="#" data-page="content/elements.html"
+                                <a href="#" data-page="site/elements.html"
                                     >Elements</a
                                 >
                             </li>
                             <li>
-                                <a
-                                    href="#"
-                                    data-page="content/page1content.html"
+                                <a href="#" data-page="site/page1content.html"
                                     >Page 1</a
                                 >
                             </li>
 
                             <li>
-                                <span class="opener">note </span>
+                                <span class="opener">note</span>
                                 <ul>
                                     <li>
-                                        <a
-                                            href="#"
-                                            data-page="noteContent/note1.html"
-                                            >note1</a
-                                        >
+                                        <span>computerArticulture</span>
+                                        <ul>
+                                            <li>
+                                                <a
+                                                    href="#"
+                                                    onclick="loadMarkdown('noteContent/computerArticulture/CA_lec1.md'); return false;"
+                                                >
+                                                    Lecture 1
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="#"
+                                                    data-page="noteContent/note2.html"
+                                                    >note2</a
+                                                >
+                                            </li>
+                                        </ul>
                                     </li>
                                     <li>
-                                        <a
-                                            href="#"
-                                            data-page="noteContent/note2.html"
-                                            >note2</a
-                                        >
+                                        <span>Machine Learning</span>
+                                        <ul>
+                                            <li>
+                                                <a
+                                                    href="#"
+                                                    onclick="loadMarkdown('noteContent/ML/ML_lec1.md'); return false;"
+                                                >
+                                                    Lecture 1
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="#"
+                                                    data-page="noteContent/note2.html"
+                                                    >note2</a
+                                                >
+                                            </li>
+                                        </ul>
                                     </li>
                                     <li><a href="#">sub3</a></li>
                                     <li><a href="#">sub4</a></li>
                                 </ul>
                             </li>
+
                             <li><a href="#">Etiam Dolore</a></li>
                             <li><a href="#">Adipiscing</a></li>
                             <li>

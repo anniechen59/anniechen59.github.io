@@ -225,3 +225,16 @@
         });
     });
 })(jQuery);
+
+function loadMarkdown(filePath, targetId = "content") {
+    fetch(filePath)
+        .then((res) => res.text())
+        .then((text) => {
+            document.getElementById(targetId).innerHTML = marked.parse(text);
+        })
+        .catch((err) => {
+            console.error("Error fetching Markdown:", err);
+            document.getElementById(targetId).innerText =
+                "Failed to load Markdown.";
+        });
+}
