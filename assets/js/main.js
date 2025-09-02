@@ -131,6 +131,18 @@
         }, 500);
     });
 
+    // self add點擊 .close-sidebar 時收起 sidebar
+    $("#sidebar").on("click touchend", ".close-sidebar", function (event) {
+        event.stopPropagation();
+
+        // 只在小螢幕收起 sidebar
+        if (breakpoints.active("<=large")) {
+            $("#sidebar").addClass("inactive");
+        }
+
+        // a 的 href 預設行為仍然照常
+    });
+
     // Prevent certain events inside the panel from bubbling.
     $sidebar.on("click touchend touchstart touchmove", function (event) {
         // >large? Bail.
