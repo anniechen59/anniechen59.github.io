@@ -270,6 +270,7 @@ i {
 
 p {
     margin: 0 0 2em 0;
+    white-space: pre-line;
 }
 
 h1,
