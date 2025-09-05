@@ -99,17 +99,17 @@ The diagram below shows the relationship between cache components.
 -   IC = Instruction Count
 -   CPI = num of cycles Per Instruction
 
-![Photo](CA_note1Pic2.jpeg)
+![Photo](CANote1Pic2.jpeg)
 
 #### Formulas:
 
 -   $IC*CPI = CPU\ Clock\ Cycles$
 -   $T_cpu = IC * CPI * Clock\ Cycle$
 
-![Photo](CA_note1Pic4.jpeg)
+![Photo](./CA_note1Pic4.jpeg)
 
 The following is an example of performance calculation:
-![Photo](CA_note1Pic3.jpeg)
+![Photo](CA_note1Pic3.jpg)
 
 ## Relative Performance & Speedup
 
@@ -122,7 +122,7 @@ The following is an example of performance calculation:
 -   $performance_x = \frac{1}{execution\_time_X}$
 
 Ex:
-![My Photo](CA_notePic1.jpeg)
+![My Photo](.CA_notePic1.jpeg)
 
 ### Speedup
 
