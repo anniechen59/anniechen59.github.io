@@ -112,6 +112,7 @@ The following is an example of performance calculation:
 ![Photo](img/CA_note1Pic3.jpeg)
 ![Photo](./img/CA_note1Pic3.jpeg)
 ![Photo:)))](https://github.com/anniechen59/anniechen59.github.io/blob/main/noteContent/computerArchitecture/CA_note1Pic8.jpeg?raw=true)
+![Photo>:(((()](https://raw.githubusercontent.com/anniechen59/anniechen59.github.io/refs/heads/main/noteContent/computerArchitecture/CA_note1Pic8.jpeg)
 
 ## Relative Performance & Speedup
 
