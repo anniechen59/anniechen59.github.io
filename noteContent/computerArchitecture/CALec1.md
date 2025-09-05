@@ -111,6 +111,7 @@ The diagram below shows the relationship between cache components.
 The following is an example of performance calculation:
 ![Photo](img/CA_note1Pic3.jpeg)
 ![Photo](./img/CA_note1Pic3.jpeg)
+![Photo:)))](https://github.com/anniechen59/anniechen59.github.io/blob/main/noteContent/computerArchitecture/CA_note1Pic8.jpeg?raw=true)
 
 ## Relative Performance & Speedup
 
