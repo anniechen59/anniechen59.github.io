@@ -99,20 +99,17 @@ The diagram below shows the relationship between cache components.
 -   IC = Instruction Count
 -   CPI = num of cycles Per Instruction
 
-![Photo](CANote1Pic2.jpeg)
+![Photo](https://github.com/anniechen59/anniechen59.github.io/blob/main/noteContent/computerArchitecture/CANote1Pic2.jpeg?raw=true)
 
 #### Formulas:
 
 -   $IC*CPI = CPU\ Clock\ Cycles$
 -   $T_cpu = IC * CPI * Clock\ Cycle$
 
-![Photo](./CA_note1Pic4.jpeg)
+![Photo](https://github.com/anniechen59/anniechen59.github.io/blob/main/noteContent/computerArchitecture/CA_note1Pic4.jpeg?raw=true)
 
 The following is an example of performance calculation:
-![Photo](img/CA_note1Pic3.jpeg)
-![Photo](./img/CA_note1Pic3.jpeg)
-![Photo:)))](https://github.com/anniechen59/anniechen59.github.io/blob/main/noteContent/computerArchitecture/CA_note1Pic8.jpeg?raw=true)
-![Photo>:(((()](https://raw.githubusercontent.com/anniechen59/anniechen59.github.io/refs/heads/main/noteContent/computerArchitecture/CA_note1Pic8.jpeg)
+![Photo](https://github.com/anniechen59/anniechen59.github.io/blob/main/noteContent/computerArchitecture/CA_note1pic3.jpeg?raw=true)
 
 ## Relative Performance & Speedup
 
@@ -125,7 +122,7 @@ The following is an example of performance calculation:
 -   $performance_x = \frac{1}{execution\_time_X}$
 
 Ex:
-![My Photo](.CA_notePic1.jpeg)
+![My Photo](https://github.com/anniechen59/anniechen59.github.io/blob/main/noteContent/computerArchitecture/CA_notePic1.jpeg?raw=true)
 
 ### Speedup
 
@@ -135,9 +132,9 @@ Speedup = $\frac{Tfast}{​Tslow​​}$
 The faster time is on the bottom.</mark>
 
 Here is an example showing how to calculate speedup:
-![Photo](CA_note1Pic5.jpeg)
+![Photo](https://github.com/anniechen59/anniechen59.github.io/blob/main/noteContent/computerArchitecture/CA_note1Pic5.jpeg?raw=true)
 
-![Photo](CA_notePic9.jpeg)
+![Photo](https://github.com/anniechen59/anniechen59.github.io/blob/main/noteContent/computerArchitecture/CA_notePic9.jpeg?raw=true)
 
 #### speedup vs. performance
 
@@ -146,7 +143,7 @@ Speedup=$\frac{Tfast}{​Tslow​​}$
 
 ## Amdahl's Law : Understanding How Serial Portions Limit Speedup
 
-![Photo](CA_note1Pic7.jpeg)
+![Photo](https://github.com/anniechen59/anniechen59.github.io/blob/main/noteContent/computerArchitecture/CA_note1Pic7.jpeg?raw=true)
 EXAMPLE:
 
     same clock rate program 60% parallelism
@@ -177,5 +174,5 @@ Commonly used to measure CPU, memory, servers, or overall system performance.
 -   Compiler: affects IC, CPI
 -   Instruction set architecture: affects IC, CPI, ClockCycle
 
-![Photo](CA_note1Pic6.jpeg)
-![Photo](CA_note1Pic8.jpeg)
+![Photo](https://github.com/anniechen59/anniechen59.github.io/blob/main/noteContent/computerArchitecture/CA_note1Pic6.jpeg?raw=true)
+![Photo](https://github.com/anniechen59/anniechen59.github.io/blob/main/noteContent/computerArchitecture/CA_note1Pic8.jpeg?raw=true)
