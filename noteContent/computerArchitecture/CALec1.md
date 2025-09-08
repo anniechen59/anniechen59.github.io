@@ -99,14 +99,14 @@ The diagram below shows the relationship between cache components.
 -   IC = Instruction Count
 -   CPI = num of cycles Per Instruction
 
-![Photo](https://github.com/anniechen59/anniechen59.github.io/blob/main/noteContent/computerArchitecture/CANote1Pic2.jpeg?raw=true)
+<img src="https://github.com/anniechen59/anniechen59.github.io/blob/main/noteContent/computerArchitecture/CANote1Pic2.jpeg?raw=true" style="width:50%; height:auto;" />
 
 #### Formulas:
 
 -   $IC*CPI = CPU\ Clock\ Cycles$
 -   $T_cpu = IC * CPI * Clock\ Cycle$
 
-![Photo](https://github.com/anniechen59/anniechen59.github.io/blob/main/noteContent/computerArchitecture/CA_note1Pic4.jpeg?raw=true)
+![Photo](noteContent/computerArchitecture/CA_note1Pic4.jpeg)
 
 The following is an example of performance calculation:
 ![Photo](https://github.com/anniechen59/anniechen59.github.io/blob/main/noteContent/computerArchitecture/CA_note1pic3.jpeg?raw=true)
