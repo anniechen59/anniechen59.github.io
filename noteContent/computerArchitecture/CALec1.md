@@ -107,7 +107,7 @@ The diagram below shows the relationship between cache components.
 -   IC = Instruction Count
 -   CPI = num of cycles Per Instruction
 
-<img src="noteContent/computerArchitecture/CA_Note1Pic2.jpeg" style="width:50%; height:auto;" />
+<img src="noteContent/computerArchitecture/CANote1Pic2.jpeg" style="width:50%; height:auto;" />
 
 #### Formulas:
 
