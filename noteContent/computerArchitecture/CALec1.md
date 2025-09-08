@@ -1,3 +1,11 @@
+<style>
+  img {
+    width: 50%; 
+    height: auto; 
+    display: block;
+  }
+</style>
+
 # Computer Architecture
 
 Source: Penn State University, CSE 530: Introduction to Computer Architecture
@@ -99,7 +107,7 @@ The diagram below shows the relationship between cache components.
 -   IC = Instruction Count
 -   CPI = num of cycles Per Instruction
 
-<img src="https://github.com/anniechen59/anniechen59.github.io/blob/main/noteContent/computerArchitecture/CANote1Pic2.jpeg?raw=true" style="width:50%; height:auto;" />
+<img src="noteContent/computerArchitecture/CA_Note1Pic2.jpeg" style="width:50%; height:auto;" />
 
 #### Formulas:
 
