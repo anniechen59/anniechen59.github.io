@@ -1,0 +1,94 @@
+<section>
+    <header class="main" style="margin-bottom: 3em;">
+        <h2>LM Watermarking via PPO Training & Failure Analysis</h2>
+        <p style="color: #f56a6a;"><strong>Reinforcement Learning | Hugging Face TRL | GPT-2 | PPO Fine-tuning</strong></p>
+    </header>
+
+    <div class="row gtr-150">
+        <div class="col-7 col-12-small">
+            <div class="box" style="padding: 1.5em; background: #fafafa; border-left: 6px solid #f56a6a;">
+                <h3>Project Objective</h3>
+                <p>This project aimed to fine-tune a language model (GPT-2) using <strong>Proximal Policy Optimization (PPO)</strong> to consistently embed a fixed custom watermark (<code>@@Annie@@</code>) exactly once in every generated response. It explores the full lifecycle of RLHF—from early success to catastrophic mode collapse.</p>
+            </div>
+        </div>
+        <div class="col-5 col-12-small">
+            <h3>Key Results</h3>
+            <ul class="alt">
+                <li><strong>90% Success Rate</strong> achieved in early training stages.</li>
+                <li><strong>Custom Tokenization</strong>: Synchronized embeddings for <code>@@Annie@@</code>.</li>
+                <li><strong>Iterative Reward Design</strong>: 5 versions of reward functions (v0-v4).</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="major" />
+
+    <div class="row">
+        <div class="col-12">
+            <h3>Technical Architecture & PPO Pipeline</h3>
+            <p>The training utilized the <strong>TRL (Transformer Reinforcement Learning)</strong> framework with a GPT-2 base model. The core challenge involved balancing the reward signal with language fluency.</p>
+        </div>
+        
+        <div class="col-4 col-12-small">
+            <h4>1. Data Design</h4>
+            <p>Combined short tasks (poems, summaries) with <strong>Warm-Up SFT</strong> pretraining to teach the model the initial placement of the watermark.</p>
+        </div>
+        <div class="col-4 col-12-small">
+            <h4>2. Reward Shaping</h4>
+            <p>Evolved from simple presence-only rewards to a complex formula incorporating <strong>SBERT semantic similarity</strong> and <strong>diversity bonuses</strong>.</p>
+        </div>
+        <div class="col-4 col-12-small">
+            <h4>3. Stability Tuning</h4>
+            <p>Implemented <strong>Reward Clipping</strong>, Batch Normalization, and <strong>Adaptive KL Control</strong> to stabilize PPO gradients.</p>
+        </div>
+    </div>
+
+    
+
+    <hr class="major" />
+
+    <div class="row">
+        <div class="col-6 col-12-small">
+            <h3>Failure Analysis & Engineering Lessons</h3>
+            <p>A critical part of this project was analyzing <strong>Mode Collapse</strong> during late-stage training:</p>
+            <ul>
+                <li><strong>KL Divergence Instability</strong>: Lack of a reference model led to uncontrolled policy drift.</li>
+                <li><strong>Reward Flattening</strong>: Excessive normalization caused vanishing gradients.</li>
+                <li><strong>Adversarial Robustness</strong>: Identified prompts that could "trap" the model into stripping the watermark.</li>
+            </ul>
+        </div>
+        <div class="col-6 col-12-small">
+            <h3>Final Tech Stack</h3>
+            <dl>
+                <dt>Frameworks</dt>
+                <dd>Hugging Face TRL, Transformers, PyTorch</dd>
+                <dt>Models</dt>
+                <dd>GPT-2 (Base), Value Head (PPO)</dd>
+                <dt>NLP Tools</dt>
+                <dd>SBERT (Similarity), NLTK (Lemmatization)</dd>
+                <dt>Optimization</dt>
+                <dd>PPO, SFT Pretraining, Adaptive KL</dd>
+            </dl>
+        </div>
+    </div>
+
+    <hr class="major" />
+
+    <section>
+        <h3>Full Research Report</h3>
+        <p>For a deep dive into the reward mathematics, training logs, and CUDA optimization strategies, view the full report below.</p>
+        
+        <div class="pdf-container" style="border: 2px solid #efefef; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <embed 
+                src="LM_Watermark_PPO_Report_AnnieChen.pdf" 
+                type="application/pdf" 
+                width="100%" 
+                height="900px" 
+            />
+        </div>
+
+        <ul class="actions" style="margin-top: 2em; justify-content: center;">
+            <li><a href="LM_Watermark_PPO_Report_AnnieChen.pdf" class="button primary icon solid fa-download" target="_blank">Download Technical Report (PDF)</a></li>
+        </ul>
+    </section>
+</section>

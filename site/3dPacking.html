@@ -1,0 +1,69 @@
+<section>
+    <header class="main" style="margin-bottom: 3em;">
+        <h2>3D Rotation-Aware Greedy Packing Algorithm</h2>
+        <p><strong>Integrated with LiDAR & Mask R-CNN | Smart Warehousing Systems</strong></p>
+    </header>
+
+    <div class="row gtr-150">
+        <div class="col-5 col-12-small">
+            <span class="image fit">
+                <img src="images/3dPacking.png" alt="3D Packing Algorithm Visualization" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);" />
+            </span>
+        </div>
+        <div class="col-5 col-12-small">
+            <h3>Project Overview</h3>
+            <p>This research addresses the 3D bin packing problem (3DBPP) by introducing a <strong>rotation-aware greedy heuristic</strong>. By optimizing item orientation across three axes, the system achieves a higher packing density than traditional fixed-orientation models.</p>
+            
+            <div class="box" style="padding: 1em; background: #fdfdfd;">
+                <h4 style="margin-bottom: 0.5em;"><i class="fa fa-chart-line"></i> Performance Gain</h4>
+                <p style="font-size: 1.5em; color: #f56a6a; font-weight: bold; margin: 0;">+20.4% Efficiency</p>
+                <small>Increase in volumetric utilization compared to baseline greedy approaches.</small>
+            </div>
+        </div>
+    </div>
+
+    <hr class="major" />
+
+    <div class="row">
+        <div class="col-12">
+            <h3>Technical Pipeline</h3>
+            <p>The algorithm operates on a dynamic environmental feedback loop:</p>
+        </div>
+        <div class="col-4 col-12-small">
+            <h4>1. Object Recognition</h4>
+            <p>Utilizes <strong>Mask R-CNN</strong> to identify cargo from camera feeds, extracting 2D masks to estimate initial 3D bounding volumes.</p>
+        </div>
+        <div class="col-4 col-12-small">
+            <h4>2. Spatial Mapping</h4>
+            <p><strong>LiDAR</strong> point clouds are processed to generate a voxel-based map of the available container space, ensuring real-world accuracy.</p>
+        </div>
+        <div class="col-4 col-12-small">
+            <h4>3. Geometric Fitting</h4>
+            <p>A <strong>Greedy Search</strong> evaluates placement candidates, using <strong>VTK</strong> for collision detection and surface alignment optimization.</p>
+        </div>
+    </div>
+
+    [Image of 3D bin packing algorithm logic flow]
+
+    <hr class="major" />
+
+    <section>
+        <header>
+            <h3>Full Technical Report</h3>
+            <p>For a deep dive into the mathematical proofs and collision detection logic, please refer to the paper below.</p>
+        </header>
+        
+        <div class="pdf-frame" style="position: relative; border: 2px solid #efefef; border-radius: 12px; overflow: hidden; background: #525659;">
+            <embed 
+                src="A Greedy 3D Packing Algorithm for Smart Warehousing Systems.pdf" 
+                type="application/pdf" 
+                width="100%" 
+                height="1000px" 
+            />
+        </div>
+
+        <ul class="actions" style="margin-top: 2em; justify-content: center;">
+            <li><a href="A Greedy 3D Packing Algorithm for Smart Warehousing Systems.pdf" class="button primary icon solid fa-download" target="_blank">Download Research Paper (PDF)</a></li>
+        </ul>
+    </section>
+</section>

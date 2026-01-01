@@ -1,0 +1,97 @@
+<section>
+    <header class="main" style="margin-bottom: 3em;">
+        <h1>Randomized Competitive Greedy Algorithm for Flow Decomposition</h1>
+        <p style="color: #f56a6a;"><strong>Algorithm Design | Graph Theory | Combinatorial Optimization | Python</strong></p>
+    </header>
+
+    <div class="row gtr-150">
+        <div class="col-7 col-12-small">
+            <div class="box" style="padding: 1.5em; background: #fafafa; border-left: 6px solid #f56a6a;">
+                <h3>The Challenge: MFD Complexity</h3>
+                <p>The <strong>Minimum Flow Decomposition (MFD)</strong> problem is NP-hard. Traditional deterministic greedy methods often lead to <strong>structural fragmentation</strong>, where extracting a "widest path" prematurely destroys the global graph structure, resulting in a sub-optimal, larger set of paths and cycles.</p>
+            </div>
+        </div>
+        <div class="col-5 col-12-small">
+            <h3>Key Innovations</h3>
+            <ul class="alt">
+                <li><strong>Competitive Bidding</strong>: Paths and cycles compete dynamically based on bottleneck capacities.</li>
+                <li><strong>Stochastic Perception</strong>: Injecting multiplicative noise to escape local minima.</li>
+                <li><strong>Monte Carlo Search</strong>: Retaining the best solution from multiple randomized sequences.</li>
+            </ul>
+        </div>
+    </div>
+
+    <hr class="major" />
+
+    <div class="row">
+        <div class="col-12">
+            <h3>Methodology & Novel Contributions</h3>
+            <p>Instead of a fixed sequence, this algorithm treats path and cycle extraction as a dynamic competition, sensitive to the evolving residual graph.</p>
+        </div>
+        <div class="col-4 col-12-small">
+            <div class="box" style="height: 100%;">
+                <h4>Noisy Widest-Path</h4>
+                <p>Uses a stochastic Dijkstra relaxation. By adding random noise to edge capacities, the algorithm explores diverse paths rather than just the single strongest one.</p>
+            </div>
+        </div>
+        <div class="col-4 col-12-small">
+            <div class="box" style="height: 100%;">
+                <h4>Cycle-First Preference</h4>
+                <p>Modified competitive rules to favor cycle extraction earlier, preserving the structural integrity of the remaining flow network.</p>
+            </div>
+        </div>
+        <div class="col-4 col-12-small">
+            <div class="box" style="height: 100%;">
+                <h4>Structural Anti-Fragmentation</h4>
+                <p>Replaces naive DFS with a <code>get_best_cycle</code> heuristic to ensure high-capacity cycles are prioritized before path removal.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="major" />
+
+    <div class="row">
+        <div class="col-6 col-12-small">
+            <h3>Refinement & Optimization</h3>
+            <ul>
+                <li><strong>Canonical Merging</strong>: Duplicate or rotated cycles are canonicalized and merged to minimize the final decomposition size.</li>
+                <li><strong>Validity Pruning</strong>: Ensures all extracted structures maintain flow correctness and bottleneck deductions.</li>
+                <li><strong>Complexity Handling</strong>: Efficiently manages the trade-off between randomized search iterations and time budget.</li>
+            </ul>
+        </div>
+        <div class="col-6 col-12-small">
+            <h3>Technical Implementation</h3>
+            <dl>
+                <dt>Language</dt>
+                <dd>Python (NetworkX / Custom Graph Logic)</dd>
+                <dt>Key Techniques</dt>
+                <dd>Dijkstra Relaxation, Monte Carlo Methods, Stochastic Optimization</dd>
+                <dt>Problem Domain</dt>
+                <dd>Bioinformatics (Network Flow), Transportation, Logistics</dd>
+            </dl>
+        </div>
+    </div>
+
+    <hr class="major" />
+
+    <section>
+        <header>
+            <h3>Technical Research Report</h3>
+            <p>Explore the full mathematical derivation of the noisy widest-path heuristic and the competitive bidding mechanism.</p>
+        </header>
+        
+        <div class="pdf-container" style="border: 2px solid #efefef; border-radius: 12px; overflow: hidden; background: #333; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <embed 
+                src="CSE565FinalProj.pdf" 
+                type="application/pdf" 
+                width="100%" 
+                height="800px" 
+            />
+        </div>
+
+        <ul class="actions" style="margin-top: 2.5em; justify-content: center;">
+            <li><a href="https://github.com/anniechen59/Randomized-Competitive-Greedy-Algorithm-for-Flow-Decomposition" class="button big wide" target="_blank"><i class="icon brands fa-github"></i> View on GitHub</a></li>
+            <li><a href="CSE565FinalProj.pdf" class="button primary icon solid fa-download" target="_blank">Download Full Report (PDF)</a></li>
+        </ul>
+    </section>
+</section>

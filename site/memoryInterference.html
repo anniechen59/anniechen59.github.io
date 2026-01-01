@@ -1,0 +1,90 @@
+<section>
+    <header class="main" style="margin-bottom: 3em;">
+        <h1>Beyond Core Isolation: Non-Linear Memory Bandwidth Interference</h1>
+        <p style="color: #f56a6a;"><strong>Computer Architecture | Virtualization (WSL2) | Performance Characterization</strong></p>
+    </header>
+
+    <div class="row gtr-150">
+        <div class="col-7 col-12-small">
+            <span class="image fit">
+                <img src="images/memory_cliff.png" alt="Memory Performance Cliff Graph" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);" />
+            </span>
+            <p style="text-align: center; font-style: italic; font-size: 0.9em; margin-top: 0.5em;">
+                Figure 1: The "Performance Cliff" identified during the 1KB to 64MB block size sweep.
+            </p>
+        </div>
+        <div class="col-5 col-12-small">
+            <h3>The "Bandwidth Wall"</h3>
+            <p>While physical CPU core pinning isolates pipeline contention, it fails to protect shared <strong>Last-Level Cache (LLC)</strong> and <strong>DRAM bandwidth</strong>. This study characterizes the non-linear performance collapse in multi-tenant workloads[cite: 280, 285].</p>
+            
+            <div class="box" style="padding: 1.2em; border-left: 6px solid #f56a6a; background: #fafafa;">
+                <h4 style="margin: 0 0 0.5em 0;"><i class="fa fa-exclamation-triangle"></i> Key Finding</h4>
+                <p style="font-size: 1.8em; color: #f56a6a; font-weight: 900; margin: 0;">49.9% Drop</p>
+                <p style="margin: 0; font-size: 0.9em;">Peak performance degradation observed at a 32MB block size[cite: 285].</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="major" />
+
+    <div class="row">
+        <div class="col-12">
+            <h3>Experimental Methodology</h3>
+            <p>Conducted in a virtualized <strong>WSL2</strong> environment (Ubuntu 22.04) on an <strong>Intel Core Ultra 5 125H (Meteor Lake)</strong> architecture[cite: 305, 314].</p>
+        </div>
+        <div class="col-4 col-12-small">
+            <div class="box" style="height: 100%;">
+                <h4>Black-Box Analysis</h4>
+                <p>Since hardware PMUs are abstracted in WSL2, interference was inferred solely through application-level throughput and controlled sensitivity sweeps.</p>
+            </div>
+        </div>
+        <div class="col-4 col-12-small">
+            <div class="box" style="height: 100%;">
+                <h4>Isolation Strategy</h4>
+                <p><strong>Victim:</strong> sysbench memory (pinned to Core 0).<br>
+                   <strong>Aggressor:</strong> stress-ng-stream (pinned to Core 1)[cite: 323, 326, 329].</p>
+            </div>
+        </div>
+        <div class="col-4 col-12-small">
+            <div class="box" style="height: 100%;">
+                <h4>The "Shielding Effect"</h4>
+                <p>Workloads within the 18MB LLC remained protected (latency-bound), while those exceeding it hit a "Bandwidth Wall"[cite: 310, 354, 371].</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="major" />
+
+    <div class="row">
+        <div class="col-6 col-12-small">
+            <h3>The 128KB Anomaly</h3>
+            <p>A surprising <strong>7.8% performance gain</strong> was observed at 128KB under interference. This is attributed to <strong>Intel Turbo Boost</strong>: the aggressor increased package power, boosting the clock frequency for the cache-resident victim[cite: 367, 368].</p>
+        </div>
+        <div class="col-6 col-12-small">
+            <h3>Effective LLC Boundary</h3>
+            <p>Although the physical LLC is 18MB, severe interference began at 16MB (22.8% drop). This demonstrates the <strong>"Effective Capacity"</strong>: OS kernel and metadata overhead reduce the usable buffer in shared environments[cite: 390, 391, 392].</p>
+        </div>
+    </div>
+
+    <hr class="major" />
+
+    <section>
+        <header>
+            <h3>Full Research Paper</h3>
+            <p>For a detailed analysis of Uncore Frequency Scaling, DRAM Row Buffer contention, and implications for Cloud Schedulers (Kubernetes), read the full paper[cite: 384, 399, 411].</p>
+        </header>
+        
+        <div class="pdf-container" style="border: 2px solid #efefef; border-radius: 12px; overflow: hidden; background: #333; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <embed 
+                src="cse530final.pdf" 
+                type="application/pdf" 
+                width="100%" 
+                height="900px" 
+            />
+        </div>
+
+        <ul class="actions" style="margin-top: 2.5em; justify-content: center;">
+            <li><a href="cse530final.pdf" class="button primary icon solid fa-download" target="_blank">Download Technical Report (PDF)</a></li>
+        </ul>
+    </section>
+</section>
