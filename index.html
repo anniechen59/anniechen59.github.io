@@ -140,51 +140,74 @@ $(document).ready(function () {
     const $content = $("#content");
     const $body = $("body");
 
-    function loadContent(url, type) {
-        if (!url || url === "#") return;
+function loadContent(url, type) {
+    if (!url || url === "#") return;
 
-        console.log("Loading:", url);
+    console.log("Loading:", url);
 
-        if (type === "md") {
-            $.get(url, function (data) {
-                $content.html('<section>' + marked.parse(data) + '</section>');
-            }).fail(function () {
-                alert("cant find Markdown: " + url);
-            });
-        } else {
-            $content.load(url, function (response, status) {
-                if (status === "error") {
-                    alert("loading error, plz check the route again: " + url);
-                }
-            });
-        }
+    if (type === "md") {
 
-        window.scrollTo(0, 0);
-        $body.removeClass("is-menu-visible");
+        $.get(url, function (data) {
+
+            $content.html('<section>' + marked.parse(data) + '</section>');
+
+            // ✅ 內容顯示後再關側邊欄
+            $body.removeClass("is-menu-visible");
+
+        }).fail(function () {
+            alert("cant find Markdown: " + url);
+        });
+
+    } else {
+
+        $content.load(url, function (response, status) {
+
+            if (status === "error") {
+                alert("loading error, plz check the route again: " + url);
+                return;
+            }
+
+            // ✅ HTML 載入完成後再關
+            $body.removeClass("is-menu-visible");
+
+        });
     }
+
+    // 捲到最上方
+    window.scrollTo(0, 0);
+}
+
 
     loadContent("site/homePage.html", "html");
 
-    document.addEventListener(
-        "click",
-        function (e) {
+document.addEventListener(
+    "click",
+    function (e) {
 
-            const target = e.target.closest("a[data-page], a[data-md]");
-            if (!target) return;
+        const target = e.target.closest("a[data-page], a[data-md]");
+        if (!target) return;
 
-            console.log("MENU CLICKED (CAPTURE)", target);
+        console.log("MENU CLICKED (CAPTURE)", target);
 
-            e.preventDefault();
-            e.stopPropagation();
+        e.preventDefault();
+        e.stopPropagation();
 
-            const pageUrl = target.getAttribute("data-page");
-            const mdUrl   = target.getAttribute("data-md");
+        const pageUrl = target.getAttribute("data-page");
+        const mdUrl   = target.getAttribute("data-md");
 
-            if (pageUrl) loadContent(pageUrl, "html");
-            else if (mdUrl) loadContent(mdUrl, "md");
-        },
-        true   
-    );
+        if (pageUrl) loadContent(pageUrl, "html");
+        else if (mdUrl) loadContent(mdUrl, "md");
+
+        // 🔥 這裡「強制」關閉（無論如何都執行）
+        setTimeout(() => {
+            document.body.classList.remove("is-menu-visible");
+            console.log("FORCE CLOSE SIDEBAR");
+        }, 0);
+        return false;
+    },
+    true
+);
+
 
 });
 

@@ -1,28 +1,88 @@
 <section>
     <header class="main">
         <h2>PrepMaster AI — Intelligent Presentation Coaching</h2>
+        <span
+            style="
+                background-color: #f1c40f;
+                color: #fff;
+                padding: 6px 18px;
+                border-radius: 8px;
+                font-size: 1.1em;
+                font-weight: 800;
+                vertical-align: middle;
+                margin-left: 10px;
+                display: inline-block;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                border: 2px solid #fff;
+                text-transform: uppercase;
+            "
+        >
+            🏆 Overall Winner (1/209)
+        </span>
+        @ STEMpower Hacks
     </header>
 
     <div class="row gtr-150">
         <div class="col-6 col-12-small">
             <span class="image fit">
-                <a href="https://youtu.be/aFXT7-qVwXc" class="image fit" target="_blank" rel="noopener noreferrer">
-                    <img src="https://img.youtube.com/vi/aFXT7-qVwXc/maxresdefault.jpg" alt="PrepMaster AI" style="border-radius: 8px; border: 1px solid #ddd;">
+                <a
+                    href="https://youtu.be/aFXT7-qVwXc"
+                    class="image fit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="https://img.youtube.com/vi/aFXT7-qVwXc/maxresdefault.jpg"
+                        alt="PrepMaster AI"
+                        style="border-radius: 8px; border: 1px solid #ddd"
+                    />
                 </a>
             </span>
             <ul class="actions stacked">
-                <li><a href="https://github.com/anniechen59/prepMaster" class="button big wide" target="_blank"><i class="icon brands fa-github"></i> View on GitHub</a></li>
-                <li><a href="https://youtu.be/aFXT7-qVwXc" class="button primary big wide" target="_blank"><i class="icon solid fa-play"></i> Watch Demo Video</a></li>
+                <li>
+                    <a
+                        href="https://github.com/anniechen59/prepMaster"
+                        class="button big wide"
+                        target="_blank"
+                        ><i class="icon brands fa-github"></i> View on GitHub</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://youtu.be/aFXT7-qVwXc"
+                        class="button primary big wide"
+                        target="_blank"
+                        ><i class="icon solid fa-play"></i> Watch Demo Video</a
+                    >
+                </li>
             </ul>
         </div>
         <div class="col-6 col-12-small">
             <h3>The Challenge: Beyond the "Black-Box"</h3>
-            <p>Most AI coaching tools suffer from <strong>"Black-Box Evaluation"</strong> and <strong>"Keyword Rigidity"</strong>. If a speaker uses a synonym instead of the exact word on a slide, traditional systems fail. PrepMaster AI was engineered to deliver <strong>quantitative, traceable, and objective feedback</strong> through multi-modal analysis.</p>
+            <p>
+                Most AI coaching tools suffer from
+                <strong>"Black-Box Evaluation"</strong> and
+                <strong>"Keyword Rigidity"</strong>. If a speaker uses a synonym
+                instead of the exact word on a slide, traditional systems fail.
+                PrepMaster AI was engineered to deliver
+                <strong>quantitative, traceable, and objective feedback</strong>
+                through multi-modal analysis.
+            </p>
             <h4>Key Innovations:</h4>
             <ul>
-                <li><strong>Transparent Evaluation:</strong> 3:4:3 weighted scoring model (Content, Fluency, Tone).</li>
-                <li><strong>Intelligent Alignment:</strong> Hierarchical validation ensures meanings are tracked, not just exact words.</li>
-                <li><strong>Actionable Metrics:</strong> Insights into WPM, filler-word density, and pitch variability.</li>
+                <li>
+                    <strong>Transparent Evaluation:</strong> 3:4:3 weighted
+                    scoring model (Content, Fluency, Tone).
+                </li>
+                <li>
+                    <strong>Intelligent Alignment:</strong> Hierarchical
+                    validation ensures meanings are tracked, not just exact
+                    words.
+                </li>
+                <li>
+                    <strong>Actionable Metrics:</strong> Insights into WPM,
+                    filler-word density, and pitch variability.
+                </li>
             </ul>
         </div>
     </div>
@@ -32,13 +92,31 @@
     <div class="row">
         <div class="col-12">
             <h3>Technical Architecture & Three-Layer Validation</h3>
-            <p>At the core is a sophisticated engine designed to ensure highly accurate content tracking, even with nuanced speech:</p>
-            
+            <p>
+                At the core is a sophisticated engine designed to ensure highly
+                accurate content tracking, even with nuanced speech:
+            </p>
+
             <div class="box">
                 <ol>
-                    <li><strong>Level 1: Exact & Lemma Match</strong> — Utilizes <code>nltk.WordNetLemmatizer</code> to normalize spoken words (e.g., "analyzing" to "analyze").</li>
-                    <li><strong>Level 2: Phrase & Substring Match</strong> — Detects multi-word phrases and handles punctuation/white space cleansing.</li>
-                    <li><strong>Level 3: Semantic Vector Match</strong> — Employs <code>sentence-transformers</code> (all-MiniLM-L6-v2) with a <strong>0.15 Weak Threshold</strong> to identify synonyms and paraphrasing, significantly reducing false negatives.</li>
+                    <li>
+                        <strong>Level 1: Exact & Lemma Match</strong> — Utilizes
+                        <code>nltk.WordNetLemmatizer</code> to normalize spoken
+                        words (e.g., "analyzing" to "analyze").
+                    </li>
+                    <li>
+                        <strong>Level 2: Phrase & Substring Match</strong> —
+                        Detects multi-word phrases and handles punctuation/white
+                        space cleansing.
+                    </li>
+                    <li>
+                        <strong>Level 3: Semantic Vector Match</strong> —
+                        Employs
+                        <code>sentence-transformers</code> (all-MiniLM-L6-v2)
+                        with a <strong>0.15 Weak Threshold</strong> to identify
+                        synonyms and paraphrasing, significantly reducing false
+                        negatives.
+                    </li>
                 </ol>
             </div>
         </div>
@@ -51,7 +129,10 @@
                 <dt>Speech-to-Text (ASR)</dt>
                 <dd><code>faster-whisper</code> (CTranslate2 optimized)</dd>
                 <dt>Natural Language Processing</dt>
-                <dd><code>sentence-transformers</code>, <code>nltk</code>, <code>PyTorch</code></dd>
+                <dd>
+                    <code>sentence-transformers</code>, <code>nltk</code>,
+                    <code>PyTorch</code>
+                </dd>
                 <dt>Audio Analysis</dt>
                 <dd><code>librosa</code>, <code>numpy</code></dd>
                 <dt>Frontend</dt>
@@ -61,10 +142,22 @@
         <div class="col-6 col-12-small">
             <h3>Standard Workflow</h3>
             <ul class="alt">
-                <li><strong>Slide Upload:</strong> PDF text extraction & AI keyword expansion.</li>
-                <li><strong>Audio Input:</strong> Real-time recording or .wav/.mp3 upload.</li>
-                <li><strong>Auto-Sync:</strong> Intelligent alignment of speech to specific slides.</li>
-                <li><strong>Metric Report:</strong> Detailed slide-by-slide scores and coaching advice.</li>
+                <li>
+                    <strong>Slide Upload:</strong> PDF text extraction & AI
+                    keyword expansion.
+                </li>
+                <li>
+                    <strong>Audio Input:</strong> Real-time recording or
+                    .wav/.mp3 upload.
+                </li>
+                <li>
+                    <strong>Auto-Sync:</strong> Intelligent alignment of speech
+                    to specific slides.
+                </li>
+                <li>
+                    <strong>Metric Report:</strong> Detailed slide-by-slide
+                    scores and coaching advice.
+                </li>
             </ul>
         </div>
     </div>
